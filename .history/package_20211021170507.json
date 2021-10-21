@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
-    "build": "dumi build",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
+    "build": "father-build",
     "deploy": "npm run docs:build && npm run docs:deploy",
     "release": "npm run build && npm publish",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
@@ -20,12 +20,8 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
-    ]
+    "*.{js,jsx,less,md,json}": ["prettier --write"],
+    "*.ts?(x)": ["prettier --parser=typescript --write"]
   },
   "dependencies": {
     "react": "^16.12.0 || ^17.0.0"
